@@ -1,5 +1,8 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -7,15 +10,17 @@
 
 body{
 
-    background: radial-gradient(circle at 50% 0%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    min-height: 100vhs;
+    background: radial-gradient(circle at 50% 10%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    min-height: 100vh;
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 700;
     color: #fff;
 }
 
 .container{
+    
     width: 700px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -24,8 +29,11 @@ header{
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    padding: 25px;
-    margin: 50px;
+    align-items: center;
+    padding: 20px;
+    margin: 50px 0;
+    
+    
 }
 
 .Score{
@@ -38,6 +46,7 @@ header{
 .Score p{
     font-size: 3rem;
     color:hsl(229, 25%, 31%);
+    font-weight: 700;
     margin: 0;
 }
 
@@ -50,9 +59,41 @@ h1{
     line-height: 0.8;
 }
 
+h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 h3{
     color:  hsl(229, 64%, 46%);
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main{
+    
+    margin: 0 auto;
+    width: 480px;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+main::before {
+    background-image: url('./images/bg-triangle.svg');
+    background-size:cover;
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    z-index: -1;
+
 }
 
 .rules{
@@ -64,34 +105,126 @@ h3{
     text-transform: uppercase;
     padding: 10px 20px;
     position: fixed;
-    bottom: 100px;
+    bottom: 40px;
     right: 35px;
 }
 
 .btn-choice {
     border: none;
-    width : 150px;
-    height : 150px;
+    box-shadow: inset 0 -7px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    margin: 0 25px;
+    width : 182px;
+    height : 182px;
     border-radius: 50%;
 
 }
 
-.btn-choice img {
+.btn-choice:focus {
+    outline: none;
+}
 
+.btn-choice:active {
+    transform: scale(0.9);
+}
+.btn-choice .wrapper {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0 6px rgba(0, 0, 0, 0.15);
+    height: 130px;
+    width: 130px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.rock {
+.btn-rock {
     background: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 
 }
 
-.paper{
+.btn-paper{
     background: linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 
 }
 
-.scissors {
+.btn-scissors {
     background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+
+}
+
+
+.chosen {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+.chosen .btn-choice {
+    margin: 50px 100px;
+    transform: scale(1.4);
+}
+
+.playagain {
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: #fff;
+    color:hsl(229, 25%, 31%);
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    letter-spacing: 2px;
+}
+
+.oneline {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    line-height: 0.8;
+    text-transform: uppercase;
+}
+
+@media (max-width:800px)  {
+    .chosen .btn-choice {
+        margin: 50px 20px;
+        transform: scale(1);
+    }
+    .mobile-down{
+        order: 1;
+    }
+
+    .chosen{
+        width: 500px;
+    }
+}   
+
+
+.rules-instruction {
+    background-color: #f0f0f0;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+.rules-instruction button {
+    border: none;
+    background: transparent;
+    margin-top: 100px;
+    cursor: pointer;
+
 
 }

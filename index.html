@@ -8,7 +8,7 @@
   
   <title>Rock, Paper, Scissors</title>
   <link rel="stylesheet" href="style.css"/>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
   
 </head>
@@ -24,25 +24,62 @@
 
     <div class="Score">
       <h3>Score</h3>
-      <p id="score">12</p>
+      <p id="score">0</p>
     </div>
-</div>
+
 </header>
 
-<main>
+<main id="main">
 
-<button class="btn-choice rock">
-  <img src="./images/icon-rock.svg" alt="rock icon"></button>
+<button class="btn-choice btn-paper pick" data-choice="paper">
+  <span class="wrapper">
+  <img src="./images/icon-paper.svg" alt="paper icon">
+  </span></button>
+  
+<button class="btn-choice btn-scissors pick" data-choice="scissors">
+<span class="wrapper">
+  <img src="./images/icon-scissors.svg" alt="scissors-icon">
+</span>
+</button>
 
-<button class="btn-choice paper">
-  <img src="./images/icon-paper.svg" alt="paper icon"></button>
-
-<button class="btn-choice scissors">
-  <img src="./images/icon-scissors.svg" alt="scissors-icon"></button>
-
+<button class="btn-choice btn-rock pick" data-choice="rock">
+  <span class="wrapper">
+  <img src="./images/icon-rock.svg" alt="rock icon">
+</span></button>
 </main>
 
-<button class="rules">Rules</button>
+<div class="rules-instruction" id="instruction">
+
+    <img src="./images/image-rules.svg" alt="rules">
+  <button id="close"><img src="./images/icon-close.svg" alt="icon-close"></button>
+
+</div>
+
+<button class="rules" id="open">Rules</button>
+</div>
+
+<div class="chosen" id="chosen">
+  <div>
+    <h2>You Picked</h2>
+    <button class="btn-choice btn-paper" id="user_pick" data-choice="paper">
+      <span class="wrapper">
+      <img src="./images/icon-paper.svg" alt="paper icon">
+      </span></button>
+  </div>
+
+  <div class="mobile-down">
+    <p class="oneline">You <span id="winner">won</span></p>
+    <button class="playagain" id="reset">Play again</button>
+  </div>
+
+  <div>
+    <h2>The House Picked</h2>
+    <button class="btn-choice btn-rock" id="computer_pick" data-choice="rock">
+      <span class="wrapper">
+      <img src="./images/icon-rock.svg" alt="rock icon">
+    </span></button>
+  </div>
   
+</div>
 </body>
 </html>
