@@ -19,7 +19,7 @@ body{
 
 .container{
     
-    width: 700px;
+    width: 600px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -85,6 +85,7 @@ main{
 
 main::before {
     background-image: url('./images/bg-triangle.svg');
+    background-repeat: no-repeat;
     background-size:cover;
     content: '';
     position: absolute;
@@ -105,8 +106,13 @@ main::before {
     text-transform: uppercase;
     padding: 10px 20px;
     position: fixed;
-    bottom: 40px;
+    bottom: 30px;
     right: 35px;
+    color: #fff;
+}
+
+.rules:hover{
+    color: #fff;
 }
 
 .btn-choice {
@@ -165,6 +171,7 @@ main::before {
     width: 1000px;
     max-width: 100%;
     margin: 0 auto;
+    background-color: red;
 
 }
 
@@ -191,19 +198,123 @@ main::before {
     text-transform: uppercase;
 }
 
-@media (max-width:800px)  {
+.playagain:hover{
+    color: #db2e4d;
+}
+
+@media (max-width:600px)  {
+    .header{
+        border: 3px solid hsl(217, 16%, 45%);
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 50px 0;
+
+        max-width:375px ;
+        max-height:150px ;
+        width:311px ;
+        height:96px ;
+    }
+
+    
+
+
+
+
+
     .chosen .btn-choice {
-        margin: 50px 20px;
+        margin: 50px 25px;
         transform: scale(1);
     }
     .mobile-down{
         order: 1;
+        
+        
     }
 
     .chosen{
         width: 500px;
+        
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            
+        
+        
+        
     }
-}   
+
+   .chosen h2{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        
+    }   
+    
+    main{
+    
+        margin: 0 auto;
+        width: 400px;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .btn-choice {
+        border: none;
+        box-shadow: inset 0 -5px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        margin: 0 25px;
+        width : 150px;
+        height : 150px;
+        border-radius: 50%;
+    
+    }
+    .btn-choice .wrapper {
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: inset 0 5px rgba(0, 0, 0, 0.15);
+        height: 120px;
+        width: 120px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .rules{
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #fff;
+        font-family: inherit;
+        text-transform: uppercase;
+        color: #fff;
+        letter-spacing: 2.5px;
+        font-size: 15px;
+        
+        left: 50px;
+        bottom: 20pxpx;
+    }
+
+
+    .rules-btn{
+        max-width: 100%;
+        position: relative;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+
+    }    
+}  
+
 
 
 .rules-instruction {
